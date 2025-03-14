@@ -19,3 +19,9 @@ SELECT department_id, MAX(SALARY) AS MAX_SALARY, MIN(SALARY) AS MIN_SALARY
 FROM EMPLOYEES
 GROUP BY department_id;
 
+----4 Total Salary paid in each department (Done)
+ 
+SELECT department_id, SUM(salary) AS total_salary
+FROM hr.employees
+GROUP BY department_id
+ORDER BY total_salary
