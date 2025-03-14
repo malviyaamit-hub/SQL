@@ -25,3 +25,7 @@ SELECT department_id, SUM(salary) AS total_salary
 FROM hr.employees
 GROUP BY department_id
 ORDER BY total_salary
+
+---- Get the  Salary dept wise
+
+---- 5 
