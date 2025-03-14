@@ -51,3 +51,30 @@ FROM HR.EMPLOYEES
 GROUP BY JOB_ID;
 
 ---Get the result of MAX Salary of dept wise
+
+-- 12. Find the number of employees in each manager's team
+-- finding the number of emp based on manager_id (Done)
+
+SELECT manager_id, count(*) as team_size
+FROM HR.EMPLOYEES
+WHERE manager_id is not null
+GROUP BY manager_id;
+---- get the result and with manager ID the total team size in Manager ID
+
+---- 13. Find the highest salary for each manager (DONE)
+SELECT manager_id, MAX(SALARY) as MAX_SALARY
+FROM HR.EMPLOYEES
+WHERE manager_id is not null
+GROUP BY manager_id;
+
+---- The result is highest salary in each managers ID
+
+-- 14. Find the average salary for each manager's team
+-- finding the average salary of emp based on manager_id  (Done)
+
+SELECT manager_id, AVG(SALARY) as avg_salary
+FROM HR.EMPLOYEES
+where manager_id is not null
+GROUP BY manager_id;
+---- The result is Avg salary in each managers ID
+
