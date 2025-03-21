@@ -1,0 +1,42 @@
+create or REPLACE FUNCTION pf_calcl(salary number)
+RETURN NUMBER
+is
+    bonus NUMBER;
+begin
+    if salary>5000 then
+        bonus:=salary*0.10;
+    else;
+        bonus:=salary*0.15;
+    end if;
+    RETURN bonus;
+end; 
+
+SELECT pf_calcl(10000) from dual
+
+
+create or REPLACE Function fullname(employee_id number)
+return varchar2
+is
+    fullname varchar2(100);
+begin
+    select first_name || last_name into fullname
+    from hr.employees where employee_id=emp_id;
+    return fullname;
+end;
+
+
+create or replace function count_vowels(str varchar2)
+return number
+is
+    counter number:=0;
+
+begin
+    for i in 1..length(str)loop
+            if substr(str,i,1) in ('a','e','i','o','u')then
+                counter:=counter+1;
+            end if;
+    end loop;
+    return counter;
+end;
+
+select count_vowels('Data science')from dual
