@@ -1,0 +1,141 @@
+----- if, if else
+
+DECLARE
+    variable NUMBER :=10;
+BEGIN
+    IF variable > 5 then
+        DBMS_OUTPUT.PUT_LINE("Nubmer is greater then 5");
+    END IF;
+END;
+
+
+DECLARE
+    emp_name VARCHAR2(20);
+    emp_salary number;
+BEGIN
+    select first_name,salary into emp_name,emp_salary from HR.EMPLOYEES where employee_id=101;
+     DBMS_OUTPUT.PUT_LINE(emp_name || emp_salary);
+    end;
+
+
+
+
+    DECLARE
+        v_counter number :=1;
+    BEGIN
+        loop
+            DBMS_OUTPUT.PUT_LINE(v_counter);
+            v_counter:=v_counter+1;
+            exit when v_counter>5;
+        end loop;
+    END;
+    
+    
+  DECLARE
+        v_counter number :=1;
+    BEGIN
+        loop
+            DBMS_OUTPUT.PUT_LINE(v_counter);
+            v_counter:=v_counter+2;
+            exit when v_counter>10;
+        end loop;
+    END;
+    
+DECLARE
+        v_counter number :=9;
+    BEGIN
+        loop
+            DBMS_OUTPUT.PUT_LINE(v_counter);
+            v_counter:=v_counter-2;
+            exit when v_counter<10;
+        end loop;
+    END;
+
+
+DECLARE
+        v_counter number :=0;
+    BEGIN
+        loop
+            DBMS_OUTPUT.PUT_LINE(v_counter);
+            v_counter:=v_counter+4;
+            exit when v_counter>100;
+        end loop;
+    END;
+
+
+BEGIN
+    for i in 1..5 loop
+        DBMS_OUTPUT.PUT_LINE('itteration' || i);
+    end loop;
+end;
+
+
+BEGIN
+    for i in reverse 1..5 loop
+        DBMS_OUTPUT.PUT_LINE('itteration' || i);
+    end loop;
+end;
+
+BEGIN
+    for i in reverse 1..10 loop
+        if mod(i,2)=0 THEN
+            DBMS_OUTPUT.PUT_LINE(i);
+        end if;    
+    end loop;
+end;
+
+
+BEGIN
+    for i in reverse 1..10 loop
+        if mod(i,2)=1 THEN
+            DBMS_OUTPUT.PUT_LINE(i);
+        end if;    
+    end loop;
+end;
+
+
+BEGIN
+    for i in reverse 1..10 loop
+            DBMS_OUTPUT.PUT_LINE(i*i);
+     end loop;
+end;
+
+
+DECLARE
+    a number:=0;
+    b NUMBER:=1;
+    c number;
+BEGIN  
+    DBMS_OUTPUT.PUT_LINE(a);
+    DBMS_OUTPUT.PUT_LINE(b);
+    for i in 1..10 loop
+        c:=a+b;
+        dbms_output.put_line(c);
+        a:=b;
+        b:=c;
+    end loop;
+end;
+
+
+DECLARE
+    num number:=2;
+
+BEGIN
+    for i in 1..5 loop
+        dbms_output.put_line('Multilplication table of num'||num);
+        for i in 1..10 loop
+            dbms_output.put_line(num || 'X' || i || ':' || i*num);
+         end loop;
+    end loop;     
+end;
+
+DECLARE
+    table1 number:=2;
+begin
+    for num in 1..5 loop
+        dbms_output.put_line('multiplication table of num'||num);
+        for i in 1..10 loop
+            dbms_output.put_line(num || 'X' || i || ':' ||i*num);
+        end loop;
+    end loop;
+end;
