@@ -1,0 +1,126 @@
+DECLARE
+    counter number:=1;
+BEGIN
+    WHILE counter <=5 loop
+        DBMS_OUTPUT.PUT_LINE('Counter Value' || counter);
+        counter :=counter+1;
+    end loop;
+end;
+
+----Odd Number---
+DECLARE
+    counter number:=1;
+BEGIN
+    WHILE counter <=10 loop
+        DBMS_OUTPUT.PUT_LINE('Counter Value' || counter);
+        counter :=counter+2;
+    end loop;
+end;
+----- Reverse----
+DECLARE
+    counter number:=10;
+BEGIN
+    WHILE counter >=1 loop
+        DBMS_OUTPUT.PUT_LINE('Counter Value' || counter);
+        counter :=counter-1;
+    end loop;
+end;
+
+---- Continue and exit
+
+DECLARE
+    i number :=1;
+BEGIN
+    WHILE i <=5 loop
+        IF i = 3 THEN
+            i:=i+1;
+            continue;
+        end if;
+        DBMS_OUTPUT.PUT_LINE('Number' || i);
+        i:=i+1;
+    end loop;
+end;
+
+
+DECLARE
+    i number :=1;
+BEGIN
+    WHILE i <=5 loop
+        IF i = 5 THEN
+            i:=i+1;
+            exit;
+        end if;
+        DBMS_OUTPUT.PUT_LINE('Number' || i);
+        i:=i+1;
+    end loop;
+end;
+
+
+DECLARE
+    i number :=2;
+BEGIN
+    WHILE i <=10 loop
+        IF mod(i,2) = 1 THEN
+            EXIT;
+        end if;
+        DBMS_OUTPUT.PUT_LINE('Number' || i);
+        i:=i+1;
+    end loop;
+end;
+
+
+DECLARE
+    i number :=1;
+BEGIN
+    WHILE i <=60 loop
+        IF mod(i,3) = 0 THEN
+             i:=i+1;
+             CONTINUE;
+        end if;
+        DBMS_OUTPUT.PUT_LINE('Number' || i);
+        i:=i+1;
+    end loop;
+end;
+
+
+DECLARE
+    i number :=1;
+BEGIN
+    WHILE i <=6 loop
+        IF mod(i,3) = 0 THEN
+             i:=i+1;
+             CONTINUE;
+        end if;
+        DBMS_OUTPUT.PUT_LINE('Number' || i);
+        i:=i+1;
+    end loop;
+end;
+
+
+DECLARE
+    i number :=1;
+    sum number:=0;
+BEGIN
+    WHILE i <=10 loop
+        sum := sum+i;
+        if sum>10 THEN
+            EXIT;
+        end if;
+        DBMS_OUTPUT.PUT_LINE('Number' || sum);
+        i:=i+1;
+    end loop;
+end;
+
+
+DECLARE
+    i number :=1;
+BEGIN
+    WHILE i <=5 loop
+          if i IN(2,4)THEN
+              i:= i+1;  
+            continue;
+          END IF;  
+        DBMS_OUTPUT.PUT_LINE('Number' || i);
+        i:=i+1;
+    end loop;
+end;
